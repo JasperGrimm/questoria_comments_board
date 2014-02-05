@@ -1,0 +1,8 @@
+<div class="bs-callout col-md-offset-{{ comment.comment.depth }}">
+    <h4>{{ comment.comment.author }} <span class="pull-right small">{{ comment.comment.created_at|date:'dd.MM.yyyy HH:mm' }}</span></h4>
+    <hr>
+    <p>{{ comment.comment.body }}</p>
+    <span class="btn btn-link reply" data-comment="comment" ng-hide="comment.comment.depth>=4">Ответить</span>
+    <span class="btn btn-link pull-right expander" ng-hide="(comment.comment.depth>0)||(comment.children.length==0)" ng-click="toggle()">{{ expanded?"Свернуть":"Развернуть("+comment.children.length+")"}}</span>
+    <div class="comment_form" data-parentcomment="comment" ng-show="toogle_form"></div>
+</div>

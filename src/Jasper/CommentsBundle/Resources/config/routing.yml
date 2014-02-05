@@ -1,0 +1,3 @@
+jasper_main_page:
+  pattern:  /
+  defaults: { _controller: JasperCommentsBundle:Default:index }

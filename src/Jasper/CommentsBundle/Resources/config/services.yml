@@ -1,0 +1,7 @@
+parameters:
+#    jasper_comments.example.class: Jasper\CommentsBundle\Example
+
+services:
+#    jasper_comments.example:
+#        class: %jasper_comments.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

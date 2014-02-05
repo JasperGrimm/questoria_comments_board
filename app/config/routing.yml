@@ -1,0 +1,9 @@
+jasper_comments:
+    resource: "@JasperCommentsBundle/Resources/config/routing.yml"
+    prefix:   /
+
+fos_comment_api:
+    type: rest
+    resource: "@FOSCommentBundle/Resources/config/routing.yml"
+    prefix: /api
+    defaults: { _format: json }

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Questoria Comments Board</title>
+
+    <!-- Bootstrap -->
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/3.0.2/css/font-awesome.css">
+    <link rel="stylesheet" href="{{ asset("bundles/jaspercomments/css/angular-growl.min.css") }}">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <style>
+        .navbar { position: relative; }
+        .bs-callout {
+            margin-top: 20px;
+            padding: 20px;
+            border-left: 3px solid #E26D6D;
+            background-color: #fcf8f2;
+            border-color: #f0ad4e;
+        }
+
+        .css-form .ng-invalid.ng-dirty {
+            background-color: #FA787E;
+        }
+
+        .css-form .ng-valid.ng-dirty {
+            background-color: #78FA89;
+        }
+
+        .growl {z-index: 10000;}
+
+        .isloading-wrapper.isloading-right{margin-left:10px;}
+        .isloading-overlay{position:relative;text-align:center; }
+        .isloading-overlay .isloading-wrapper{position: fixed;background:#FFFFFF;-webkit-border-radius:7px;-webkit-background-clip:padding-box;-moz-border-radius:7px;-moz-background-clip:padding;border-radius:7px;background-clip:padding-box;display:inline-block;margin:0 auto;padding:10px 20px;top:48%;z-index:9000;}
+        .icon-spin {
+            display: inline-block;
+            -moz-animation: spin 2s infinite linear;
+            -o-animation: spin 2s infinite linear;
+            -webkit-animation: spin 2s infinite linear;
+            animation: spin 2s infinite linear;
+            position: relative;
+            top: 1px;
+            display: inline-block;
+            font-family: 'Glyphicons Halflings';
+            font-style: normal;
+            font-weight: 400;
+            line-height: 1;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .icon-spin:before {
+            content: "\e031";
+        }
+
+    </style>
+</head>
+<body ng-app="questoria">
+
+<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">Questoria Comments Board</a>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div growl></div>
+        {% block content %}{% endblock %}
+
+</div><!-- /.container -->
+<script>
+    var ASSETS_PATH = "{{ asset('bundles/jaspercomments') }}";
+    var BASE_URL = "{{ app.request.baseUrl }}";
+</script>
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="https://code.jquery.com/jquery.js"></script>
+<script src="{{ asset("bundles/jaspercomments/libs/jquery.isloading.js") }}"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.11/angular.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.11/angular-resource.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.11/angular-cookies.js"></script>
+<script src="{{ asset("bundles/jaspercomments/libs/angular-growl.js") }}"></script>
+<script src="{{ asset("bundles/jaspercomments/libs/ui-bootstrap-tpls-0.9.0.min.js") }}"></script>
+<script src="{{ asset("bundles/jaspercomments/js/app.js") }}"></script>
+<script src="{{ asset("bundles/jaspercomments/js/controllers/comment.js") }}"></script>
+<script src="{{ asset("bundles/jaspercomments/js/directives/comment.js") }}"></script>
+<script src="{{ asset("bundles/jaspercomments/js/services/comment.js") }}"></script>
+<script src="{{ asset("bundles/jaspercomments/js/services/thread.js") }}"></script>
+
+</body>
+</html>
