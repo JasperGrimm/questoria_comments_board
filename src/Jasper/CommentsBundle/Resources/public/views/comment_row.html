@@ -3,6 +3,6 @@
     <hr>
     <p>{{ comment.comment.body }}</p>
     <span class="btn btn-link reply" data-comment="comment" ng-hide="comment.comment.depth>=4">Ответить</span>
-    <span class="btn btn-link pull-right expander" ng-hide="(comment.comment.depth>0)||(comment.children.length==0)" ng-click="toggle()">{{ expanded?"Свернуть":"Развернуть("+comment.children.length+")"}}</span>
+    <span class="btn btn-link pull-right expander" ng-hide="(comment.comment.depth>0)||(comment.children.length==0)" ng-click="toggle()">{{ expanded?"Свернуть("+getCountComments(comment)+")":"Развернуть("+getCountComments(comment)+")"}}</span>
     <div class="comment_form" data-parentcomment="comment" ng-show="toogle_form"></div>
 </div>

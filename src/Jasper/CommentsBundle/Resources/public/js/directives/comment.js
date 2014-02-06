@@ -202,6 +202,17 @@ questoria_app.directive('expander', function(){
                 //element.text(scope.expanded?'Свернуть':'Развернуть('+scope.comment.children.length + ')');
                 scope.$emit('expand', scope.expanded);
             }
+
+            scope.getCountComments = function(comment){
+                var count = 0;
+                for (var index in comment.children){
+                    count++;
+                    if (comment.children[index].children.length){
+                        count += scope.getCountComments(comment.children[index]);
+                    }
+                }
+                return count;
+            }
         }
     }
 })
